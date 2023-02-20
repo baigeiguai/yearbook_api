@@ -15,6 +15,7 @@ func SetupRouters() error {
 	{
 		apiGroup.GET("/echo", handler.HandlerEcho)
 		apiGroup.GET("/year2events", handler.HanlderGetEventByYear)
+		apiGroup.GET("/event_detail", handler.HandlerEventsDetail)
 		apiGroup.POST("/crawl", handler.HandlerCrawlSudaEvents)
 	}
 	if err := http.ListenAndServe(":8000", r); err != nil {
